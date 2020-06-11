@@ -1,7 +1,6 @@
 'use strict';
 
-var ec = require('./ec'),
-	rsa = require('./rsa');
+var rsa = require('./rsa');
 
 /**
  *
@@ -23,9 +22,6 @@ function jwkToBuffer(jwk, opts) {
 	opts.private = opts.private === true;
 
 	switch (kty) {
-		case 'EC': {
-			return ec(jwk, opts);
-		}
 		case 'RSA': {
 			return rsa(jwk, opts);
 		}
